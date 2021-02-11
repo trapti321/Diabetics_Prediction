@@ -1,0 +1,105 @@
+
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Sticky Footer Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sticky-footer/">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+ 
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      /* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer.css" rel="stylesheet">
+  </head>
+  <body class="d-flex flex-column h-100" style="background-image: url(https://www.dabur.com/daburhoney/images/articles/is-honey-good-for-diabetics.jpg);
+  background-position: center;background-size: cover">
+    <!-- Begin page content -->
+<main role="main" class="flex-shrink-0">
+  <div class="container">
+      <center><h1><u>Diabetic Prediction </u></h1></center>
+
+      <form action="/predict" method="POST">
+  <div class="form-group">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="pregnancies" placeholder="Number of Pregnancies eg. 0">
+  </div>
+           <div class="form-group">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="glucose" placeholder="Glucose (mg/dL) eg. 80">
+  </div>
+           <div class="form-group">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="bloodpressure" placeholder="Blood Pressure (mmHg) eg. 80">
+  </div>
+           <div class="form-group">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="skinthickness" placeholder="Skin Thickness (mm) eg. 20">
+  </div>
+           <div class="form-group">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="insulin" placeholder="Insulin Level (IU/mL) eg. 80">
+  </div>
+           <div class="form-group">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="bmi" placeholder="Body Mass Index (kg/m²) eg. 23.1">
+  </div>
+           <div class="form-group">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="dpf" placeholder="Diabetes Pedigree Function eg. 0.52">
+  </div>
+           <div class="form-group">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="age" placeholder="Age (years) eg. 34">
+  </div>
+
+          <input type="submit" class="btn btn-success" value="Predict">
+
+      </form>
+
+      <div class="results">
+			{% if prediction==1 %}
+				<h2 style="color: red; margin-top: 40px;font-weight: bold;background-color: black;padding: 5px">Prediction: Oops! You have DIABETES.</h2>
+
+			{% elif prediction==0 %}
+				<h2  style="color: green;margin-top: 40px;font-weight: bold;background-color: black;padding: 5px">Prediction: Great! You DON'T have diabetes.</h2>
+
+			{% endif %}
+		</div>
+
+  </div>
+</main>
+
+
+</body>
+</html>
